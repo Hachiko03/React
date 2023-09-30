@@ -1,8 +1,10 @@
-import { HelloWorld } from "./HelloWorld"
-import {createRoot} from "react-dom/client"
+import { HelloWorld } from "./HelloWorld";
 
-const helloWorld = <HelloWorld />
-const rootElement = document.getElementById("root")
-const root = createRoot(rootElement)
-
-root.render(helloWorld)
+export function App() {
+  return (
+    <div>
+      <HelloWorld />
+    </div>
+  );
+}
+export default App;
