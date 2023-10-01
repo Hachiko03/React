@@ -5,7 +5,8 @@ export function App() {
     return (
         <div>
             <HelloWorld />
-            <Welcome/>
+            <Welcome />
+            {/* Si no pasamos ninguna variable nuestro componente no carga ningun nombre */}
         </div>
     )
 }
