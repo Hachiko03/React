@@ -1,3 +1,3 @@
 export function Welcome({name}) {
-    return <h1>Hello, {name}</h1>;
+    return <h1>Welcome, {name}!</h1>;
   }
