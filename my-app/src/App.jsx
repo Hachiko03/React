@@ -12,7 +12,7 @@ export function App() {
         <Message />
         {/* Si, puedo renderizar el componente Message directamente dentro de el componente App . Carga su contenido sin necesidad
         de que cargue también el texto de "Hello World"*/}
-        <Welcome />
+        <Welcome age={5} />
         {/* Si no paso ningún nombre al componente Welcome, este renderizara solo el texto "Welcome, !
         Pero si le doy un valor predeterminado, en este caso Raul, renderiza ese nombre" */}
       </div>
