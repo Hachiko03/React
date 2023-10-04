@@ -16,7 +16,7 @@ export function App() {
         <Welcome age={5} />
         {/* Si no paso ningún nombre al componente Welcome, este renderizara solo el texto "Welcome, !
         Pero si le doy un valor predeterminado, en este caso Raul, renderiza ese nombre" */}
-        <Welcome name={ name } age={ 17 } />
+        <Welcome name={ name } age={ 19 } />
         {/* Si el nombre es una expresión JSX la renderiza de igual forma, ya que admite como prop cualquier expresión javascrip o 
         JSX. Para pasarla, debemos introducir la expresión JSX dentro de {} */}
       </div>
