@@ -1,3 +1,4 @@
+import { AlertClock } from "./AlertClock";
 import { Hello } from "./Hello";
 import { Message } from "./Message";
 import { Welcome } from "./Welcome";
@@ -19,6 +20,7 @@ export function App() {
         <Welcome name={ name } age={ 19 } />
         {/* Si el nombre es una expresión JSX la renderiza de igual forma, ya que admite como prop cualquier expresión javascrip o 
         JSX. Para pasarla, debemos introducir la expresión JSX dentro de {} */}
+        <AlertClock/>
       </div>
     );
   }
