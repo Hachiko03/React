@@ -27,7 +27,7 @@ export function App() {
           alert(`La hora actual es ${hour.toLocaleTimeString()}`);
         }}
       />
-      <Counter/>
+      <Counter i={10} aumentar={2}/>
     </div>
   );
 }

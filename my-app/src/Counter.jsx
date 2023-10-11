@@ -1,9 +1,9 @@
 import { useState } from "react"
 
-export default function Counter() {
-  const [ counter, modCounter ] = useState(0);
+export default function Counter({i, aumentar}) {
+  const [ counter, modCounter ] = useState(i);
   function aumentarNum() {
-    modCounter(counter + 1)
+    modCounter(counter + aumentar)
   };
   return (
     <div>
