@@ -1,16 +1,17 @@
-import { useState } from "react"
+import { useState } from "react";
+import CounterDisplay from "./CounterDisplay";
 
-export default function Counter({i, aumentar}) {
-  const [ counter, modCounter ] = useState(i);
+export default function Counter({ i, aumentar }) {
+  const [contador, modCounter] = useState(i);
   function aumentarNum() {
-    modCounter(counter + aumentar)
-  };
+    modCounter(contador + aumentar);
+  }
   return (
     <div>
-      <h2>Contador {counter}</h2>
-          <button onClick={aumentarNum}>Aumentar</button>
+      <CounterDisplay contador={contador}/>
+      <button onClick={aumentarNum}>Aumentar</button>
     </div>
-  )
+  );
 }
 /* En este caso pasamos un valor inmediato dentro de la función que react nos da en su useState,
 esto no nos causará problemas aqui porque nuestro contador no depende de su valor anterior. En caso 
