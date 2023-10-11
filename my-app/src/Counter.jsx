@@ -1,15 +1,23 @@
 import { useState } from "react";
 import CounterDisplay from "./CounterDisplay";
 
-export default function Counter({ i, aumentar }) {
+export default function Counter({ i, aumentar, reducir }) {
   const [contador, modCounter] = useState(i);
   function aumentarNum() {
     modCounter(contador + aumentar);
   }
+  function disminuirNum() {
+    modCounter(contador - reducir)
+  }
+  function resetearNum() {
+    modCounter(i)
+  }
   return (
     <div>
       <CounterDisplay contador={contador}/>
-      <button onClick={aumentarNum}>Aumentar</button>
+      <button onClick={ aumentarNum }>Aumentar</button>
+      <button onClick={disminuirNum}>Disminuir</button>
+      <button onClick={resetearNum}>Reset</button>
     </div>
   );
 }
