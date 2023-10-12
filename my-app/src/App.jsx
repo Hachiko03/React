@@ -3,6 +3,7 @@ import Clock from "./Clock";
 import Counter from "./Counter";
 import { Hello } from "./Hello";
 import { Message } from "./Message";
+import MouseClicker from "./MouseClicker";
 import { Welcome } from "./Welcome";
 
 export function App() {
@@ -29,7 +30,8 @@ export function App() {
         }}
       />
       <Counter i={ 10 } aumentar={ 2 } reducir={ 5 } />
-      <Clock/>
+      <Clock />
+      <MouseClicker/>
     </div>
   );
 }
