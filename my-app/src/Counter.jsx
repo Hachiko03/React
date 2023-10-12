@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CounterDisplay from "./CounterDisplay";
 
 export default function Counter({ i, aumentar, reducir }) {
   const [contador, modCounter] = useState(i);
+
+  useEffect(() => {
+    console.log(contador)
+  }, [contador]);
   function aumentarNum() {
     modCounter(contador + aumentar);
   }
