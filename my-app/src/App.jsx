@@ -1,4 +1,5 @@
 import { AlertClock } from "./AlertClock";
+import Clock from "./Clock";
 import Counter from "./Counter";
 import { Hello } from "./Hello";
 import { Message } from "./Message";
@@ -27,7 +28,8 @@ export function App() {
           alert(`La hora actual es ${hour.toLocaleTimeString()}`);
         }}
       />
-      <Counter i={10} aumentar={2} reducir={5}/>
+      <Counter i={ 10 } aumentar={ 2 } reducir={ 5 } />
+      <Clock/>
     </div>
   );
 }
