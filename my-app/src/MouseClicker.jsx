@@ -16,3 +16,5 @@ export default function MouseClicker() {
 /* Si, sigue imprimiendose en la consola el atributo name del botón. Se debe al bulling, que hace que 
 el evento se propague hacia arriba, hasta su padre, en este caso el botón, ya que ambos tienen el 
 evento onClick */
+
+/* Con los metodos stopPropagation() o preventDefault() */
