@@ -2,6 +2,7 @@ import { AlertClock } from "./AlertClock";
 import Clock from "./Clock";
 import Counter from "./Counter";
 import { Hello } from "./Hello";
+import InteractiveWelcome from "./InteractiveWelcome";
 import { Message } from "./Message";
 import MouseClicker from "./MouseClicker";
 import MultiButton from "./MultiButton";
@@ -30,11 +31,13 @@ export function App() {
           alert(`La hora actual es ${hour.toLocaleTimeString()}`);
         }}
       />
-      <Counter i={ 10 } aumentar={ 2 } reducir={ 5 } />
+      <Counter i={10} aumentar={2} reducir={5} />
       <Clock />
       <MouseClicker />
+
+      <MultiButton />
       
-      <MultiButton/>
+      <InteractiveWelcome />
     </div>
   );
 }
