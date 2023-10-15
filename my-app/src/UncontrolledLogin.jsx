@@ -4,7 +4,6 @@ export default function UncontrolledLogin() {
   function submitData(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-
     const data = {
       username: formData.get("username"),
       password: formData.get("password"),
@@ -24,7 +23,11 @@ export default function UncontrolledLogin() {
       remember: event.target.elements.namedItem('remember').checked,
       };
       console.log(data)
-    }*/
+    }
+    
+    Estas formas son las más comúnes y las estandar para acceder a la API DOM. 
+    Aunque también hay otras formas, como usar el ref de React, pero es recomendado no usarlo 
+    en caso de no ser necesario.*/
 
   return (
     <form onSubmit={submitData}>
