@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Login() {
+export default function Login({onLogin}) {
   const [data, modData] = useState({
     username: "",
     password: "",
@@ -14,6 +14,9 @@ export default function Login() {
     modData((data) => {
       return { ...data, [name]: type === "checkbox" ? checked : valor };
     });
+  }
+  function handleLogginClick() {
+    onLogin(data);
   }
 
   return (
@@ -37,6 +40,7 @@ export default function Login() {
         type="checkbox"
         onChange={actualizacionDelInput}
       />
+      <button disabled={!data.username || !data.password} onClick={handleLogginClick}>Login</button>
     </div>
   );
 }
