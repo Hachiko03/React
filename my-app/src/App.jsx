@@ -7,6 +7,7 @@ import Login from "./Login";
 import { Message } from "./Message";
 import MouseClicker from "./MouseClicker";
 import MultiButton from "./MultiButton";
+import UncontrolledLogin from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 
 export function App() {
@@ -39,7 +40,12 @@ export function App() {
       <MultiButton />
 
       <InteractiveWelcome />
-      <Login onLogin={(data)=>{console.log(data)}}/>
+      <Login
+        onLogin={(data) => {
+          console.log(data);
+        }}
+      />
+      <UncontrolledLogin />
     </div>
   );
 }
