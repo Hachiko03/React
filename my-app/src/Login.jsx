@@ -22,10 +22,11 @@ export default function Login({ onLogin }) {
 
   function handleLogginClick(event) {
     event.preventDefault();
-    onLogin(data);
+    
   }
 
-  function handleFormOnSubmitEvent() {
+  function handleFormOnSubmitEvent(event) {
+    event.preventDefault()
     /* Para evitar el comportamiento por defecto del elemento form, uso el metodo
     event.preventDefault() */
     handleLogginClick()
@@ -51,7 +52,7 @@ export default function Login({ onLogin }) {
         type="checkbox"
         onChange={actualizacionDelInput}
       />
-      <button onClick={ handleLogginClick } disabled={!data.username || !data.password}>Login</button>
+      <button disabled={!data.username || !data.password}>Login</button>
       <button onClick={resetInputs}>Reset</button>
     </form>
   );
