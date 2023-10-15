@@ -18,6 +18,11 @@ export default function Login({onLogin}) {
   function handleLogginClick() {
     onLogin(data);
   }
+  function resetInputs(){
+    modData({username: "",
+    password: "",
+    remember: false,})
+  }
 
   return (
     <div>
@@ -40,7 +45,8 @@ export default function Login({onLogin}) {
         type="checkbox"
         onChange={actualizacionDelInput}
       />
-      <button disabled={!data.username || !data.password} onClick={handleLogginClick}>Login</button>
+      <button disabled={ !data.username || !data.password } onClick={ handleLogginClick }>Login</button>
+      <button onClick={resetInputs}>Reset</button>
     </div>
   );
 }
