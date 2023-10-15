@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Login({onLogin}) {
+export default function Login({ onLogin }) {
   const [data, modData] = useState({
     username: "",
     password: "",
@@ -15,17 +15,19 @@ export default function Login({onLogin}) {
       return { ...data, [name]: type === "checkbox" ? checked : valor };
     });
   }
-  function handleLogginClick() {
-    onLogin(data);
-  }
-  function resetInputs(){
-    modData({username: "",
-    password: "",
-    remember: false,})
+
+  function resetInputs() {
+    modData({ username: "", password: "", remember: false });
   }
 
+  function handleFormOnSubmitEvent(event) {
+    event.preventDefault();
+    /* Para evitar el comportamiento por defecto del elemento form, uso el metodo
+    event.preventDefault() */
+    onLogin(data);
+  }
   return (
-    <div>
+    <form onSubmit={handleFormOnSubmitEvent}>
       <input
         name="username"
         value={data.username}
@@ -45,8 +47,8 @@ export default function Login({onLogin}) {
         type="checkbox"
         onChange={actualizacionDelInput}
       />
-      <button disabled={ !data.username || !data.password } onClick={ handleLogginClick }>Login</button>
+      <button disabled={!data.username || !data.password}>Login</button>
       <button onClick={resetInputs}>Reset</button>
-    </div>
+    </form>
   );
 }

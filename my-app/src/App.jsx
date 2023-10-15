@@ -39,7 +39,7 @@ export function App() {
       <MultiButton />
 
       <InteractiveWelcome />
-      <Login/>
+      <Login onLogin={(data)=>{console.log(data)}}/>
     </div>
   );
 }
