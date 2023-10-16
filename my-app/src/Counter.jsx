@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CounterDisplay from "./CounterDisplay";
 
 export default function Counter({ i, aumentar, reducir }) {
@@ -16,6 +16,22 @@ export default function Counter({ i, aumentar, reducir }) {
   function resetearNum() {
     modCounter(i)
   }
+
+  const refUpDownOfCounter = useRef("")
+  const prevrefUpDownOfCounter = useRef("")
+
+  useEffect(() => {
+    if (contador > i) {
+      refUpDownOfCounter.current = "up";
+    } else if (contador < i ){
+      refUpDownOfCounter.current = "down";
+    }
+
+    if (refUpDownOfCounter.current !== prevrefUpDownOfCounter.current) {
+      console.log(refUpDownOfCounter.current)
+      prevrefUpDownOfCounter.current = refUpDownOfCounter.current;
+    }
+  },[contador,i])
   return (
     <div>
       <CounterDisplay contador={contador}/>
