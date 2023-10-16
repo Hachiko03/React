@@ -1,3 +1,4 @@
+import React from "react";
 import { AlertClock } from "./AlertClock";
 import Clock from "./Clock";
 import Counter from "./Counter";
@@ -10,6 +11,7 @@ import MouseClicker from "./MouseClicker";
 import MultiButton from "./MultiButton";
 import UncontrolledLogin from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
+import PrintInStrictMode from "./PrintInStrictMode";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
@@ -48,6 +50,7 @@ export function App() {
       />
       <UncontrolledLogin />
       <FocusableInput />
+      <React.StrictMode><PrintInStrictMode/></React.StrictMode>
     </div>
   );
 }
