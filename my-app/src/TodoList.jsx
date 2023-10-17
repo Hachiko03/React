@@ -10,19 +10,25 @@ export default function TodoList() {
   }
   function addItemIntoTheItemsArray() {
     actualizarItems((prevItems) => [...prevItems, newItem]);
-    actualizarNewItem("")
+    actualizarNewItem("");
   }
   function resetTheItemsArray() {
-    actualizarItems([])
+    actualizarItems([]);
+  }
+  function removeTheCurrentItem(index) {
+    actualizarItems((prevItems) => prevItems.filter((item, i) => i !== index));
   }
   return (
     <div>
       <input value={newItem} onChange={showItem} />
-      <button onClick={ addItemIntoTheItemsArray }> Submit</button>
+      <button onClick={addItemIntoTheItemsArray}> Submit</button>
       <button onClick={resetTheItemsArray}>Reset</button>
       <ul>
         {items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>
+            {item}{" "}
+            <button onClick={() => removeTheCurrentItem(index)}>Remove</button>
+          </li>
         ))}
       </ul>
     </div>
