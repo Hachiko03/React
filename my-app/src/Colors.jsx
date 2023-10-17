@@ -1,4 +1,5 @@
 import React from "react";
+import Color from "./Color";
 
 const colors = [
   { id: 1, name: "Rojo" },
@@ -12,7 +13,7 @@ export default function Colors() {
     <div>
       <ul>
         {colors.map((colors) => (
-          <li key={colors.id}>{colors.name}</li>
+          <Color key={colors.id} colors={colors}/>
         ))}
       </ul>
     </div>
