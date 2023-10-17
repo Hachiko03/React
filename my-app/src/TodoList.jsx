@@ -10,6 +10,7 @@ export default function TodoList() {
   }
   function addItemIntoTheItemsArray() {
     actualizarItems((prevItems) => [...prevItems, newItem]);
+    actualizarNewItem("")
   }
   return (
     <div>
