@@ -12,10 +12,14 @@ export default function TodoList() {
     actualizarItems((prevItems) => [...prevItems, newItem]);
     actualizarNewItem("")
   }
+  function resetTheItemsArray() {
+    actualizarItems([])
+  }
   return (
     <div>
       <input value={newItem} onChange={showItem} />
-      <button onClick={addItemIntoTheItemsArray}> Submit</button>
+      <button onClick={ addItemIntoTheItemsArray }> Submit</button>
+      <button onClick={resetTheItemsArray}>Reset</button>
       <ul>
         {items.map((item, index) => (
           <li key={index}>{item}</li>
