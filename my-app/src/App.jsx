@@ -12,6 +12,7 @@ import MultiButton from "./MultiButton";
 import UncontrolledLogin from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 import PrintInStrictMode from "./PrintInStrictMode";
+import Colors from "./Colors";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
@@ -50,7 +51,8 @@ export function App() {
       />
       <UncontrolledLogin />
       <FocusableInput />
-      <React.StrictMode><PrintInStrictMode/></React.StrictMode>
+      <React.StrictMode><PrintInStrictMode /></React.StrictMode>
+      <Colors/>
     </div>
   );
 }
