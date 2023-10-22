@@ -52,7 +52,7 @@ export default function Login({ onLogin }) {
         type="checkbox"
         onChange={actualizacionDelInput}
       />
-      <button disabled={!data.username || !data.password} style={{backgroundColor :data.password.length < 8 ? 'red': 'green'}} >Login</button>
+      <button disabled={!data.username || !data.password} style={{backgroundColor :data.password.length < 8 ? 'lightcoral': 'lightgreen'}} >Login</button>
       <button onClick={resetInputs}>Reset</button>
     </form>
   );
