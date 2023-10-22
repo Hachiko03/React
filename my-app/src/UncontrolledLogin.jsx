@@ -3,8 +3,8 @@ import React from "react";
 export default function UncontrolledLogin() {
   function submitData(event) {
     event.preventDefault();
-      const formData = new FormData(event.target);
-      /* Las ventajas son que es fácil de usar y te ahorras varias líneas de código y los datos
+    const formData = new FormData(event.target);
+    /* Las ventajas son que es fácil de usar y te ahorras varias líneas de código y los datos
       que envía son fáciles de procesar en el servidor
       
       Desventajas, que cono es compatible con navegadores antiguos, no se pueden mandar datos en tiempo real
@@ -12,11 +12,11 @@ export default function UncontrolledLogin() {
     const data = {
       username: formData.get("username"),
       password: formData.get("password"),
-      remember: formData.get("remember") === 'on' ? true : false,
-      };
-      console.log(data)
-    }
-    /* Se puede acceder a la data del form usando el constructor FormData
+      remember: formData.get("remember") === "on" ? true : false,
+    };
+    console.log(data);
+  }
+  /* Se puede acceder a la data del form usando el constructor FormData
     o bien buscandola el valor accediendo al DOM 
 
     function submitData(event) {
@@ -35,7 +35,7 @@ export default function UncontrolledLogin() {
     en caso de no ser necesario.*/
 
   return (
-    <form onSubmit={submitData}>
+    <form onSubmit={submitData} className="border-4" >
       <input name="username" />
       <input name="password" type="password" />
       <span>Remember</span>
