@@ -31,9 +31,14 @@ export default function Counter({ i, aumentar, reducir }) {
       console.log(refUpDownOfCounter.current)
       prevrefUpDownOfCounter.current = refUpDownOfCounter.current;
     }
-  },[contador,i])
+  }, [contador, i])
+
+  const MyStyle = {
+    backgroundColor: 'lightgreen',
+  };
+  
   return (
-    <div>
+    <div style={MyStyle}>
       <CounterDisplay contador={contador}/>
       <button onClick={ aumentarNum }>Aumentar</button>
       <button onClick={disminuirNum}>Disminuir</button>
