@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classes from "./TodoList.module.scss"
 
 export default function TodoList() {
   const [newItem, actualizarNewItem] = useState("");
@@ -19,7 +20,7 @@ export default function TodoList() {
     actualizarItems((prevItems) => prevItems.filter((item, i) => i !== index));
   }
   return (
-    <div>
+    <div className={classes.list}>
       <input value={newItem} onChange={showItem} />
       <button onClick={addItemIntoTheItemsArray}> Submit</button>
       <button onClick={resetTheItemsArray}>Reset</button>
