@@ -14,6 +14,9 @@ import { Welcome } from "./Welcome";
 import PrintInStrictMode from "./PrintInStrictMode";
 import Colors from "./Colors";
 import TodoList from "./TodoList";
+import 'bootstrap/dist/css/bootstrap.min.css';
+/* import '../scss/styles.scss' */
+import * as bootstrap from 'bootstrap'
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
