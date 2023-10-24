@@ -1,8 +1,14 @@
-import React, { Children } from 'react'
+import React, { useState } from "react";
 
-export default function Container({title,children}) {
+export default function Container({ title, children }) {
+  const [collapsed, setcollapsed] = useState(false);
+  function showContent() {
+    setcollapsed(t => !t);
+  }
   return (
-      <div className='container'>
-          <div>{ title }</div>{ children }</div>
-  )
+    <div className="container">
+      <h1 onClick={showContent}>{title}</h1>
+      {collapsed && <div>{ children }</div>}
+    </div>
+  );
 }
