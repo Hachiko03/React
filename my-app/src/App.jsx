@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { AlertClock } from "./AlertClock";
 import Clock from "./Clock";
 import Counter from "./Counter";
@@ -14,13 +14,19 @@ import { Welcome } from "./Welcome";
 import PrintInStrictMode from "./PrintInStrictMode";
 import Colors from "./Colors";
 import TodoList from "./TodoList";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 /* import '../scss/styles.scss' */
-import * as bootstrap from 'bootstrap'
+import * as bootstrap from "bootstrap";
 import Container from "./Container";
+import { LanguageContext } from "./LanguageContext";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
+  const [ language, setLanguage ] = useState("en");
+  function changeLanguage(event) {
+    setLanguage(event.target.value);
+    console.log(language);
+  }
   return (
     <Container title={"My-app"}>
       <Hello />
@@ -43,7 +49,15 @@ export function App() {
         }}
       />
       <Counter i={10} aumentar={2} reducir={5} />
-      <Clock />
+      <div>
+        <select value={language} onChange={changeLanguage}>
+          <option value={"en"}>English</option>
+          <option value={"es"}>Español</option>
+        </select>
+        <LanguageContext.Provider value={language}>
+          <Clock />
+        </LanguageContext.Provider>
+      </div>
       <MouseClicker />
 
       <MultiButton />
@@ -56,9 +70,11 @@ export function App() {
       />
       <UncontrolledLogin />
       <FocusableInput />
-      <React.StrictMode><PrintInStrictMode /></React.StrictMode>
+      <React.StrictMode>
+        <PrintInStrictMode />
+      </React.StrictMode>
       <Colors />
-      <TodoList/>
+      <TodoList />
     </Container>
   );
 }
