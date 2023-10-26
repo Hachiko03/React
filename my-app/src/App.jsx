@@ -19,6 +19,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import * as bootstrap from "bootstrap";
 import Container from "./Container";
 import { LanguageContext } from "./LanguageContext";
+import GithubUser from "./GithubUser";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
@@ -76,6 +77,7 @@ export function App() {
       </React.StrictMode>
       <Colors />
       <TodoList />
+      <GithubUser username={"Hachiko03"}/>
     </Container>
   );
 }
