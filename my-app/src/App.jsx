@@ -22,7 +22,7 @@ import { LanguageContext } from "./LanguageContext";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
-  const [ language, setLanguage ] = useState("en");
+  const [language, setLanguage] = useState("en");
   function changeLanguage(event) {
     setLanguage(event.target.value);
     console.log(language);
@@ -54,9 +54,10 @@ export function App() {
           <option value={"en"}>English</option>
           <option value={"es"}>Español</option>
         </select>
-        <LanguageContext.Provider value={language}>
-          <Clock />
-        </LanguageContext.Provider>
+        {/* Sigue mostrando el texto en inglés, por que es el valor por defecto que tiene el context
+        y es el valor que se recibe cuando un componente que no tiene Provider. Pero ya no cambia de idioma
+        al español*/}
+        <Clock />
       </div>
       <MouseClicker />
 
