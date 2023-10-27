@@ -22,6 +22,7 @@ import { LanguageContext } from "./LanguageContext";
 import GithubUser from "./GithubUser";
 import GithubUsers from "./GithubUsers";
 import ControlledForm from "./ControlledForm";
+import useCurrentLocation from "./useCurrentLocation";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
@@ -30,6 +31,7 @@ export function App() {
     setLanguage(event.target.value);
     console.log(language);
   }
+  const { location, getLocation} = useCurrentLocation();
   return (
     <Container title={"My-app"}>
       <Hello />
@@ -81,7 +83,9 @@ export function App() {
       <TodoList />
       <GithubUser username={"Hachiko03"} />
       <GithubUsers />
-      <ControlledForm/>
+      <ControlledForm />
+      <button onClick={ getLocation }>Get Location</button>
+      <h6>{location}</h6>
     </Container>
   );
 }
