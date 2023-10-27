@@ -1,19 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 export default function useCounter(i = 0, aumentar = 1, reducir = 1) {
   const [contador, modCounter] = useState(i);
 
   useEffect(() => {
     console.log(contador);
   }, [contador]);
-  function aumentarNum() {
-    modCounter(contador + aumentar);
-  }
-  function disminuirNum() {
+  const aumentarNum = useCallback(
+    function aumentarNum() {
+      modCounter(contador + aumentar);
+    },
+    [contador, aumentar]
+  );
+  const disminuirNum = useCallback(function disminuirNum() {
     modCounter(contador - reducir);
-  }
-  function resetearNum() {
+  },[contador,reducir])
+  const resetearNum = useCallback(function resetearNum() {
     modCounter(i);
-  }
+  },[contador,i])
 
   const refUpDownOfCounter = useRef("");
   const prevrefUpDownOfCounter = useRef("");
