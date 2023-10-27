@@ -1,5 +1,5 @@
 import CounterDisplay from "./CounterDisplay";
-import useCounter from "./UseCounter";
+import useCounter from "./useCounter";
 
 export default function Counter() {
   const { contador, aumentar, disminuir, resetear } = useCounter();
