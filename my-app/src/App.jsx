@@ -20,6 +20,7 @@ import * as bootstrap from "bootstrap";
 import Container from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import GithubUser from "./GithubUser";
+import GithubUsers from "./GithubUsers";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
@@ -77,7 +78,8 @@ export function App() {
       </React.StrictMode>
       <Colors />
       <TodoList />
-      <GithubUser username={"Hachiko03"}/>
+      <GithubUser username={"Hachiko03"} />
+      <GithubUsers />
     </Container>
   );
 }
