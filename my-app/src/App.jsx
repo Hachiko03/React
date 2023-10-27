@@ -23,6 +23,7 @@ import GithubUser from "./GithubUser";
 import GithubUsers from "./GithubUsers";
 import ControlledForm from "./ControlledForm";
 import useCurrentLocation from "./useCurrentLocation";
+import FilteredList from "./FilteredList";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
@@ -85,7 +86,21 @@ export function App() {
       <GithubUsers />
       <ControlledForm />
       <button onClick={ getLocation }>Get Location</button>
-      <h6>{location}</h6>
+      <h6>{ location }</h6>
+      <FilteredList listOfObjects={ [{
+        id: 1,
+        age: 20,
+        name: "Hachiko"
+      },
+      {
+        id: 2,
+        age: 12,
+        name: "Rodolfo"
+      },{
+        id: 3,
+        age: 5,
+        name: "Raúl"
+      }] } />
     </Container>
   );
 }
