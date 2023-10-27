@@ -1,0 +1,39 @@
+import { useEffect, useRef, useState } from "react";
+export default function useCounter(i = 0, aumentar = 1, reducir = 1) {
+  const [contador, modCounter] = useState(i);
+
+  useEffect(() => {
+    console.log(contador);
+  }, [contador]);
+  function aumentarNum() {
+    modCounter(contador + aumentar);
+  }
+  function disminuirNum() {
+    modCounter(contador - reducir);
+  }
+  function resetearNum() {
+    modCounter(i);
+  }
+
+  const refUpDownOfCounter = useRef("");
+  const prevrefUpDownOfCounter = useRef("");
+
+  useEffect(() => {
+    if (contador > i) {
+      refUpDownOfCounter.current = "up";
+    } else if (contador < i) {
+      refUpDownOfCounter.current = "down";
+    }
+
+    if (refUpDownOfCounter.current !== prevrefUpDownOfCounter.current) {
+      console.log(refUpDownOfCounter.current);
+      prevrefUpDownOfCounter.current = refUpDownOfCounter.current;
+    }
+  }, [contador, i]);
+  return {
+    contador: contador,
+    aumentar: aumentarNum,
+    disminuir: disminuirNum,
+    resetear: resetearNum,
+  };
+}

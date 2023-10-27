@@ -21,6 +21,7 @@ import Container from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import GithubUser from "./GithubUser";
 import GithubUsers from "./GithubUsers";
+import ControlledForm from "./ControlledForm";
 
 export function App() {
   const name = <strong>Rodolfo</strong>;
@@ -80,6 +81,7 @@ export function App() {
       <TodoList />
       <GithubUser username={"Hachiko03"} />
       <GithubUsers />
+      <ControlledForm/>
     </Container>
   );
 }
