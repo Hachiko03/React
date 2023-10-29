@@ -3,19 +3,22 @@ import { Route, Routes, useParams } from "react-router";
 import { Welcome } from "./Welcome";
 import Counter from "./Counter";
 import ShowGithubUser from "./ShowGithubUser";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import GithubUsers from "./GithubUsers";
 
 export default function App() {
-    const { username="Hachiko03" } = useParams();
+  const { username = "Hachiko03" } = useParams();
   return (
     <div>
       <NavLink to="/">Home</NavLink> | <NavLink to="/counter">Counter</NavLink>{" "}
-      | <NavLink to={`/users/${username}`}>Username</NavLink>
+      | <NavLink to={`/users`}>Users</NavLink>
       <Routes>
         <Route path="/" element={<Welcome name={"Raúl"} />} />
         <Route path="counter" element={<Counter />} />
-              <Route path="users/:username" element={ <ShowGithubUser /> }/>
-              <Route path="*" element={<p>Not Found</p>}/>
+        <Route path="users" element={<GithubUsers />}>
+          <Route path=":username" element={<ShowGithubUser />} />
+        </Route>
+        <Route path="*" element={<p>Not Found</p>} />
       </Routes>
     </div>
   );
