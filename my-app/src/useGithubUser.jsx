@@ -10,13 +10,18 @@ export default function useGithubUser(username) {
       error: null,
     };
   }
-  const { data, error } = useSWR(
+  const { data, error, mutate } = useSWR(
     `https://api.github.com/users/${username}`,
     fetcher
   );
+
+  function refetch() {
+    mutate();
+  }
   return {
     data: data,
     loading: !data && !error,
     error: error,
+    refetch: refetch,
   };
 }
