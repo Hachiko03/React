@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 import GithubUsers from "./GithubUsers";
 
 export default function App() {
-  const { username = "Hachiko03" } = useParams();
   return (
     <div>
       <NavLink to="/">Home</NavLink> | <NavLink to="/counter">Counter</NavLink>{" "}
